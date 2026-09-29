@@ -136,7 +136,7 @@
     </choose>
   </macro>
   <macro name="pages">
-    <text variable="page" range-delimiter="–"/>
+<text variable="page"/>
   </macro>
   <macro name="publisher">
     <choose>
