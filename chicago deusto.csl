@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl"
-       version="1.0"
-       class="in-text"
-       default-locale="es-ES"
-       demote-non-dropping-particle="never">
-
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="es-ES" demote-non-dropping-particle="never">
   <info>
     <title>Chicago-Deusto Autor-Fecha (Español)</title>
     <title-short>Chicago-Deusto</title-short>
-    <id>http://www.zotero.org/styles/chicago-deusto-autor-fecha-es</id>
-    <link href="http://www.zotero.org/styles/chicago-deusto-autor-fecha-es"
-          rel="self"/>
-    <link href="https://www.deusto.es/"
-          rel="documentation"/>
+    <id>https://csl.mendeley.com/styles/656640031/chicagoespanol</id>
+    <link href="http://www.zotero.org/styles/chicago-deusto-autor-fecha-es" rel="self"/>
+    <link href="https://www.deusto.es/" rel="documentation"/>
     <author>
       <name>Adaptación Chicago-Deusto para Mendeley</name>
     </author>
@@ -22,129 +15,74 @@
       Estilo autor-fecha basado en Chicago y adaptado al uso académico
       en español conforme a Chicago-Deusto.
     </summary>
-    <updated>2026-09-29T00:00:00+00:00</updated>
+    <updated>2026-09-29T22:03:44+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">
       Este trabajo está bajo una licencia Creative Commons
       Attribution-ShareAlike 3.0.
     </rights>
   </info>
-
-  <!-- ========================================================= -->
-  <!-- LOCALIZACIÓN EN ESPAÑOL                                  -->
-  <!-- ========================================================= -->
-
   <locale xml:lang="es">
     <terms>
       <term name="and">y</term>
       <term name="et-al">et al.</term>
-
       <term name="editor" form="short">
         <single>ed.</single>
         <multiple>eds.</multiple>
       </term>
-
       <term name="translator" form="short">
         <single>trad.</single>
         <multiple>trads.</multiple>
       </term>
-
       <term name="page" form="short">
         <single>p.</single>
         <multiple>pp.</multiple>
       </term>
-
       <term name="volume" form="short">
         <single>vol.</single>
         <multiple>vols.</multiple>
       </term>
-
       <term name="issue" form="short">
         <single>n.º</single>
         <multiple>n.os</multiple>
       </term>
-
       <term name="accessed">consultado el</term>
-
       <term name="open-quote">“</term>
       <term name="close-quote">”</term>
       <term name="open-inner-quote">‘</term>
       <term name="close-inner-quote">’</term>
     </terms>
   </locale>
-
-  <!-- ========================================================= -->
-  <!-- AUTORES                                                   -->
-  <!-- ========================================================= -->
-
   <macro name="author">
     <names variable="author">
-      <name name-as-sort-order="all"
-            sort-separator=", "
-            initialize-with=". "
-            and="text"
-            delimiter=", "
-            delimiter-precedes-last="never"/>
-
+      <name name-as-sort-order="all" sort-separator=", " initialize-with=". " and="text" delimiter=", " delimiter-precedes-last="never"/>
       <substitute>
         <names variable="editor">
-          <name name-as-sort-order="all"
-                sort-separator=", "
-                initialize-with=". "
-                and="text"
-                delimiter=", "
-                delimiter-precedes-last="never"/>
-          <label form="short"
-                 prefix=", "
-                 suffix=""/>
+          <name name-as-sort-order="all" sort-separator=", " initialize-with=". " and="text" delimiter=", " delimiter-precedes-last="never"/>
+          <label form="short" prefix=", " suffix=""/>
         </names>
-
         <names variable="translator">
-          <name name-as-sort-order="all"
-                sort-separator=", "
-                initialize-with=". "
-                and="text"
-                delimiter=", "
-                delimiter-precedes-last="never"/>
+          <name name-as-sort-order="all" sort-separator=", " initialize-with=". " and="text" delimiter=", " delimiter-precedes-last="never"/>
         </names>
-
         <text variable="title"/>
       </substitute>
     </names>
   </macro>
-
-  <!-- Autor para cita dentro del texto -->
   <macro name="author-short">
     <names variable="author">
-      <name form="short"
-            and="text"
-            delimiter=", "
-            delimiter-precedes-last="never"/>
-
+      <name form="short" and="text" delimiter=", " delimiter-precedes-last="never"/>
       <substitute>
         <names variable="editor">
-          <name form="short"
-                and="text"
-                delimiter=", "
-                delimiter-precedes-last="never"/>
+          <name form="short" and="text" delimiter=", " delimiter-precedes-last="never"/>
         </names>
-
-        <text variable="title"
-              form="short"
-              quotes="true"/>
+        <text variable="title" form="short" quotes="true"/>
       </substitute>
     </names>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- FECHA                                                     -->
-  <!-- ========================================================= -->
-
   <macro name="issued">
     <date variable="issued">
       <date-part name="year"/>
     </date>
   </macro>
-
   <macro name="issued-full">
     <date variable="issued">
       <date-part name="day" suffix=" de "/>
@@ -152,242 +90,132 @@
       <date-part name="year"/>
     </date>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- TÍTULO                                                    -->
-  <!-- ========================================================= -->
-
   <macro name="title">
     <choose>
-
-      <!-- Artículos, capítulos, tesis, páginas web -->
-      <if type="article-journal article-magazine article-newspaper chapter paper-conference thesis webpage post post-weblog"
-          match="any">
-        <text variable="title"
-              quotes="true"/>
+      <if type="article-journal article-magazine article-newspaper chapter paper-conference thesis webpage post post-weblog" match="any">
+        <text variable="title" quotes="true"/>
       </if>
-
-      <!-- Libros e informes -->
       <else>
-        <text variable="title"
-              font-style="italic"/>
+        <text variable="title" font-style="italic"/>
       </else>
-
     </choose>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- EDITORES                                                  -->
-  <!-- ========================================================= -->
-
   <macro name="editor">
     <names variable="editor">
-      <name initialize-with=". "
-            and="text"
-            delimiter=", "
-            delimiter-precedes-last="never"/>
-      <label form="short"
-             prefix=", "/>
+      <name initialize-with=". " and="text" delimiter=", " delimiter-precedes-last="never"/>
+      <label form="short" prefix=", "/>
     </names>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- CONTENEDOR: REVISTA / LIBRO                               -->
-  <!-- ========================================================= -->
-
   <macro name="container-title">
     <choose>
-
-      <if type="article-journal article-magazine article-newspaper"
-          match="any">
-        <text variable="container-title"
-              font-style="italic"/>
+      <if type="article-journal article-magazine article-newspaper" match="any">
+        <text variable="container-title" font-style="italic"/>
       </if>
-
-      <else-if type="chapter paper-conference"
-               match="any">
+      <else-if type="chapter paper-conference" match="any">
         <group delimiter=" ">
-          <text term="in"
-                text-case="capitalize-first"/>
-          <text variable="container-title"
-                font-style="italic"/>
+          <text term="in" text-case="capitalize-first"/>
+          <text variable="container-title" font-style="italic"/>
         </group>
       </else-if>
-
     </choose>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- VOLUMEN Y NÚMERO                                          -->
-  <!-- ========================================================= -->
-
   <macro name="volume-issue">
     <choose>
-
-      <if variable="volume issue"
-          match="all">
+      <if variable="volume issue" match="all">
         <group delimiter=" ">
           <text variable="volume"/>
-          <text variable="issue"
-                prefix="("
-                suffix=")"/>
+          <text variable="issue" prefix="(" suffix=")"/>
         </group>
       </if>
-
       <else-if variable="volume">
         <text variable="volume"/>
       </else-if>
-
       <else-if variable="issue">
-        <text variable="issue"
-              prefix="n.º "/>
+        <text variable="issue" prefix="n.º "/>
       </else-if>
-
     </choose>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- PÁGINAS                                                   -->
-  <!-- ========================================================= -->
-
   <macro name="pages">
-    <text variable="page"
-          range-delimiter="–"/>
+    <text variable="page" range-delimiter="–"/>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- DATOS DE PUBLICACIÓN                                      -->
-  <!-- ========================================================= -->
-
   <macro name="publisher">
     <choose>
-
-      <if variable="publisher-place publisher"
-          match="all">
+      <if variable="publisher-place publisher" match="all">
         <group delimiter=": ">
           <text variable="publisher-place"/>
           <text variable="publisher"/>
         </group>
       </if>
-
       <else-if variable="publisher">
         <text variable="publisher"/>
       </else-if>
-
       <else-if variable="publisher-place">
         <text variable="publisher-place"/>
       </else-if>
-
     </choose>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- DOI / URL                                                 -->
-  <!-- ========================================================= -->
-
   <macro name="access">
     <choose>
-
       <if variable="DOI">
-        <text variable="DOI"
-              prefix="https://doi.org/"/>
+        <text variable="DOI" prefix="https://doi.org/"/>
       </if>
-
       <else-if variable="URL">
         <group delimiter=". ">
           <text variable="URL"/>
-
           <choose>
             <if variable="accessed">
               <group delimiter=" ">
-                <text term="accessed"
-                      text-case="capitalize-first"/>
+                <text term="accessed" text-case="capitalize-first"/>
                 <date variable="accessed">
                   <date-part name="day"/>
-                  <date-part name="month"
-                             prefix=" de "
-                             suffix=" de "/>
+                  <date-part name="month" prefix=" de " suffix=" de "/>
                   <date-part name="year"/>
                 </date>
               </group>
             </if>
           </choose>
-
         </group>
       </else-if>
-
     </choose>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- LIBROS                                                    -->
-  <!-- ========================================================= -->
-
   <macro name="book-details">
     <group delimiter=". ">
       <text macro="publisher"/>
       <text macro="access"/>
     </group>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- CAPÍTULOS                                                 -->
-  <!-- ========================================================= -->
-
   <macro name="chapter-details">
     <group delimiter=". ">
-
       <group delimiter=", ">
         <text macro="container-title"/>
-
         <choose>
           <if variable="editor">
             <group delimiter=" ">
               <text value="editado por"/>
               <names variable="editor">
-                <name initialize-with=". "
-                      and="text"
-                      delimiter=", "
-                      delimiter-precedes-last="never"/>
+                <name initialize-with=". " and="text" delimiter=", " delimiter-precedes-last="never"/>
               </names>
             </group>
           </if>
         </choose>
-
         <text macro="pages"/>
       </group>
-
       <text macro="publisher"/>
       <text macro="access"/>
-
     </group>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- ARTÍCULOS DE REVISTA                                      -->
-  <!-- ========================================================= -->
-
   <macro name="journal-details">
     <group delimiter=". ">
-
       <group delimiter=": ">
         <group delimiter=" ">
           <text macro="container-title"/>
           <text macro="volume-issue"/>
         </group>
-
         <text macro="pages"/>
       </group>
-
       <text macro="access"/>
-
     </group>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- TESIS                                                     -->
-  <!-- ========================================================= -->
-
   <macro name="thesis-details">
     <group delimiter=". ">
       <group delimiter=", ">
@@ -397,169 +225,88 @@
       <text macro="access"/>
     </group>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- PÁGINAS WEB                                               -->
-  <!-- ========================================================= -->
-
   <macro name="web-details">
     <group delimiter=". ">
-
       <choose>
         <if variable="container-title">
-          <text variable="container-title"
-                font-style="italic"/>
+          <text variable="container-title" font-style="italic"/>
         </if>
       </choose>
-
       <choose>
         <if variable="publisher">
           <text variable="publisher"/>
         </if>
       </choose>
-
       <text macro="access"/>
-
     </group>
   </macro>
-
-  <!-- ========================================================= -->
-  <!-- CITAS EN EL TEXTO                                         -->
-  <!-- ========================================================= -->
-
-  <citation et-al-min="4"
-            et-al-use-first="1"
-            disambiguate-add-year-suffix="true"
-            collapse="year">
-
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true" collapse="year">
     <sort>
       <key macro="author-short"/>
       <key macro="issued"/>
     </sort>
-
-    <layout prefix="("
-            suffix=")"
-            delimiter="; ">
-
+    <layout prefix="(" suffix=")" delimiter="; ">
       <group delimiter=" ">
-
         <text macro="author-short"/>
-
         <group delimiter=", ">
           <text macro="issued"/>
-
           <choose>
             <if variable="locator">
               <text variable="locator"/>
             </if>
           </choose>
         </group>
-
       </group>
-
     </layout>
-
   </citation>
-
-  <!-- ========================================================= -->
-  <!-- BIBLIOGRAFÍA                                              -->
-  <!-- ========================================================= -->
-
-  <bibliography hanging-indent="true"
-                et-al-min="11"
-                et-al-use-first="7"
-                entry-spacing="0"
-                line-spacing="1">
-
+  <bibliography hanging-indent="true" et-al-min="11" et-al-use-first="7" entry-spacing="0" line-spacing="1">
     <sort>
       <key macro="author"/>
       <key macro="issued"/>
       <key variable="title"/>
     </sort>
-
     <layout suffix=".">
-
       <group delimiter=". ">
-
-        <!-- AUTOR -->
         <text macro="author"/>
-
-        <!-- AÑO -->
         <text macro="issued"/>
-
-        <!-- TÍTULO -->
         <text macro="title"/>
-
-        <!-- DATOS SEGÚN TIPO DOCUMENTAL -->
         <choose>
-
-          <!-- ARTÍCULO DE REVISTA -->
           <if type="article-journal">
             <text macro="journal-details"/>
           </if>
-
-          <!-- CAPÍTULO DE LIBRO -->
-          <else-if type="chapter paper-conference"
-                   match="any">
+          <else-if type="chapter paper-conference" match="any">
             <text macro="chapter-details"/>
           </else-if>
-
-          <!-- LIBRO -->
-          <else-if type="book graphic motion_picture song manuscript report"
-                   match="any">
+          <else-if type="book graphic motion_picture song manuscript report" match="any">
             <text macro="book-details"/>
           </else-if>
-
-          <!-- TESIS -->
           <else-if type="thesis">
             <text macro="thesis-details"/>
           </else-if>
-
-          <!-- WEB -->
-          <else-if type="webpage post post-weblog"
-                   match="any">
+          <else-if type="webpage post post-weblog" match="any">
             <text macro="web-details"/>
           </else-if>
-
-          <!-- PRENSA -->
-          <else-if type="article-newspaper article-magazine"
-                   match="any">
-
+          <else-if type="article-newspaper article-magazine" match="any">
             <group delimiter=". ">
-
               <group delimiter=", ">
-                <text variable="container-title"
-                      font-style="italic"/>
-
+                <text variable="container-title" font-style="italic"/>
                 <date variable="issued">
                   <date-part name="day"/>
-                  <date-part name="month"
-                             prefix=" de "
-                             suffix=" de "/>
+                  <date-part name="month" prefix=" de " suffix=" de "/>
                   <date-part name="year"/>
                 </date>
               </group>
-
               <text macro="access"/>
-
             </group>
-
           </else-if>
-
-          <!-- RESTO -->
           <else>
             <group delimiter=". ">
               <text macro="publisher"/>
               <text macro="access"/>
             </group>
           </else>
-
         </choose>
-
       </group>
-
     </layout>
-
   </bibliography>
-
 </style>
